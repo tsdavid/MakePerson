@@ -1,0 +1,45 @@
+1539828195531	geckodriver	INFO	geckodriver 0.21.0 (c7d3022be6420de1ca4076d932aa32b299f3ea10 2018-06-14)
+1539828195647	geckodriver	INFO	Listening on 127.0.0.1:51688
+1539828198570	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\owner\\AppData\\Local\\Temp\\rust_mozprofile.tv3XHIDtLbbD"
+1539828203630	Marionette	INFO	Listening on port 51696
+1539828204166	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539828204250	Marionette	DEBUG	[6442450945] Frame script loaded
+1539828204252	Marionette	DEBUG	[6442450945] Frame script registered
+1539828204320	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1539828205391	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=AW-826288939, line 74: unreachable code after return statement
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=AW-826288939, line 74: unreachable code after return statement
+1539828209570	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.waug.com/main/
+1539828211445	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1539828212104	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.waug.com/main/
+[Child 7348, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Chi1539828217723	Marionette	INFO	Stopped listening on port 51696
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+KLIB_SelfTest return : KLR_OK
+1539829080874	geckodriver	INFO	geckodriver 0.21.0 (c7d3022be6420de1ca4076d932aa32b299f3ea10 2018-06-14)
+1539829080996	geckodriver	INFO	Listening on 127.0.0.1:52036
+1539829083921	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\owner\\AppData\\Local\\Temp\\rust_mozprofile.88W8pzxT9j24"
+1539829086712	Marionette	INFO	Listening on port 52045
+1539829087151	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539829087223	Marionette	DEBUG	[6442450945] Frame script loaded
+1539829087224	Marionette	DEBUG	[6442450945] Frame script registered
+1539829087238	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1539829088215	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1539829091433	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.waug.com/main/
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=AW-826288939, line 74: unreachable code after return statement
+JavaScript warning: https://www.googletagmanager.com/gtag/js?id=AW-826288939, line 74: unreachable code after return statement
+1539829093406	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1539829094391	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.waug.com/main/
+[Parent 17888, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 12072, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Ch[Child 13708, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 17504, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 11539829103644	Marionette	INFO	Stopped listening on port 52045
+[GPU 2312, Chrome_Ch
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+KLIB_SelfTest return : KLR_OK

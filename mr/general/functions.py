@@ -72,7 +72,7 @@ def reservation(driver , prc_date ,quantity ):
     actions.move_to_element(element).perform()
 
     i = 0
-    while i < quantity:
+    while i < int(quantity):
         element.click()
         i += 1
 
@@ -137,38 +137,39 @@ def res_qunt(driver , quantity):
                        ))).click()
 
 def order(driver , L_NAME , F_NAME ,FULL_NAME , BIRTH_DATE , PHONE_NB):
-    WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.XPATH,
-         "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[2]/div[2]/input"
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
+         "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[2]/div[2]/input"
              ))).send_keys(L_NAME)
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[3]/div[2]/input"
+        "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[3]/div[2]/input"
         ).send_keys(F_NAME)
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[4]/div[2]/input"
+        "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[4]/div[2]/input"
          ).send_keys(FULL_NAME)
     driver.find_element_by_xpath(
         "//*[@id='input-icc']"
           ).click()
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[5]/div[2]/select/option[2]"
+        "//*[@id='input-icc']/option[2]"
         ).click()
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[6]/div[2]/input"
+        "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[6]/div[2]/input"
         ).send_keys(BIRTH_DATE)
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/input"
+        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/input"
         ).send_keys(PHONE_NB)
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select"
+        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select"
         ).click()
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select/option[5]"
+        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select/option[3]"
+        ).click()
+    time.sleep(1)
+    driver.find_element_by_xpath(
+        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select"
         ).click()
     driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select"
-        ).click()
-    driver.find_element_by_xpath(
-        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select/option[4]"
+        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select/option[5]"
         ).click()
 
     driver.find_element_by_xpath(

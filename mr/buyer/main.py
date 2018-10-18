@@ -1,16 +1,21 @@
 #-*- coding: utf-8 -*-
 import sys
 import random
-import functions as fc
-from myreal import mr_vars as mrvr
-from waug import wgfunction as wgfc
+import sys
+sys.path.insert(0, '/Users/owner/PycharmProjects/MakePerson/mr/general/')
+import functions  as fc
+import accounts as ac
 import codes as cd
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+import pandas as pd
+import numpy as np
+
 
 #구매전 정보 받는 함수
 def question():
@@ -49,15 +54,15 @@ def cal(amount , rule):
 if __name__ == "__main__":
     question()
     #driver = webdriver.Firefox()
-    driver = webdriver.Chrome('/Users/user/PycharmProjects/buyer/chromedriver')
+    driver = webdriver.Chrome('/Users/owner/PycharmProjects/MakePerson/mr/buyer/chromedriver')
 
 
 
-    driver.get(cd.company_code[company]['login_url'])
+    driver.get(cd.company_code[int(company)]['login_url'])
 
 
 
-    cal(quantity, cd.company_code[company]['buy_rule'])
+    cal(quantity, cd.company_code[int(company)]['buy_rule'])
 
 
     quantity_list = []
@@ -68,15 +73,59 @@ if __name__ == "__main__":
     buyurl_code = 'item_url_' + str(product)
 
 
-
+    UserList = []
+    BuyTimeList=[]
     #일단 perfect_trans로 for를 준다 total_trans로 주게되면 나머지값에 대한 구매 처리가 생각하기 어려움
     for i in range(int(perfect_trans)):
-        fc.login(driver , mrvr.myreal_users[int(select_account) + i] + mrvr.myreal_user_domain[int(select_account) + i] , "tongsung8116!")
-        driver.get(print(cd.company_code[company][buyurl_code]))
-        fc.reservation(driver , prc_date , quantity)
-        fc.res_date(driver , int(prc_date))
-        fc.res_qunt(driver , int(quantity_list[i]))
-        fc.order(driver , mrvr.myreal_users[int(select_account) + i][0] , mrvr.myreal_users[int(select_account) + i] ,mrvr.myreal_users[int(select_account) + i] + "." + mrvr.myreal_users[int(select_account) + i][0] , random.choice(mrvr.birth_date_list), "01072518121")
+        fc.login(driver , ac.MrKimnKimsUser[int(select_account) + i] + "@kimnkims.com" , "tongsung8116!")
+        driver.get(cd.company_code[int(company)][buyurl_code])
+        fc.reservation(driver , prc_date , 4)
+        fc.order(driver , ac.MrKimnKimsUser[int(select_account) + i][0] , ac.MrKimnKimsUser[int(select_account) + i] ,ac.MrKimnKimsUser[int(select_account) + i] + "." + ac.MrKimnKimsUser[int(select_account) + i][0] , 950901, "11111111111")
         fc.ticket(driver)
-        fc.clk_ticket(driver , int(quantity_list[i]))
+        #fc.clk_ticket(driver , int(quantity_list[i]))
+
+        BuyTime = driver.find_element_by_xpath("/html/body/main/div/div[4]/div[5]/div/div[2]/div/div[1]/div[1]/div[2]").text
+
+
+        UserList.append(ac.MrKimnKimsUser[int(select_account) + i])
+        BuyTimeList.append(BuyTime)
+
         fc.logout(driver)
+
+    # index_format(index) & columns_format(columns)정의
+    index_format = []
+    for iz in range(int(perfect_trans)):
+        index_format.append(iz)
+
+    columns_format = ['AccountNum', 'User', 'Item', 'Compnay', 'Card', 'Qunt', 'ResDate', 'PayTime']
+
+    # DataFrame 초기화
+    values = pd.DataFrame(index=index_format, columns=columns_format)
+
+
+    for ii in range(int(perfect_trans)):
+        # fill in x values into column index zero of values
+        values.iloc[ii, 0] = int(select_account) + int(ii)  # AccountNum
+        values.iloc[ii, 1] = UserList[ii]  # User
+        values.iloc[ii, 2] = product  # Item
+        values.iloc[ii, 3] = company  # Compnay
+        values.iloc[ii, 4] = "신한카드"  # Card
+        values.iloc[ii, 5] = "4"  # Qunt
+        values.iloc[ii, 6] = prc_date  # ResDate
+        values.iloc[ii, 7] = y[ii]  # PayTime
+
+    # saves DataFrame(values) into an Excel file
+    values.to_excel('./test.xlsx',
+                    sheet_name='Sheet1',
+                    columns=columns_format,
+                    header=True,
+                    index=index_format,
+                    index_label="y = sin(x)",
+                    startrow=1,
+                    startcol=0,
+                    engine=None,
+                    merge_cells=True,
+                    encoding=None,
+                    inf_rep='inf',
+                    verbose=True,
+                    freeze_panes=None)

@@ -7,9 +7,10 @@ import time
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.alert import Alert
 import requests
-from general import functions as fc
 import sys
-sys.setdefaultencoding('utf-8')
+sys.path.insert(0, '/Users/owner/PycharmProjects/MakePerson/waug/general/')
+import functions as fc
+
 
 
 waug_HOMEPAGE = "https://www.waug.com/main"
@@ -30,19 +31,23 @@ LT_PHONE = "8121"
 
 
 if __name__ == "__main__":
-    driver = webdriver.Firefox()
+    options = webdriver.ChromeOptions()
+    options.add_argument("--kiosk")
+    driver = webdriver.Chrome('/Users/owner/PycharmProjects/MakePerson/waug/buyer/chromedriver' , options=options)
     driver.wait = WebDriverWait(driver, 2)
 
     driver.get(waug_HOMEPAGE)
     driver.wait = WebDriverWait(driver, 2)
-    fc.login(driver)
+    fc.login(driver , USER_CON[1]+"@poongsung.me" , PASSWORD )
+    time.sleep(1)
     driver.get(waug_sin_uss_ITEMURL)
-    checkStock(driver)
-    coupon_check(driver)
-    checkOpt(driver)
-    order(driver)
-    payment(driver)
-    eticket(driver)
+    #checkStock & coupon_check은 spy로
+    #fc.checkStock(driver,"http://naver.com")
+    #fc.coupon_check(driver)
+    fc.checkOpt(driver , 1)
+    fc.order(driver, 'kim' , '7251' , '8121' ,'last')
+    fc.payment(driver)
+    fc.eticket(driver)
     driver.wait = WebDriverWait(driver, 2)
     driver.get("https://www.waug.com/my/order.html")
     driver.wait = WebDriverWait(driver, 2)

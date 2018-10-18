@@ -11,9 +11,11 @@ import requests
 #로그인 함수
 def login(driver , USERID , PASSWORD):
     #push the "login button" at main page
-    login_btn = driver.find_element_by_link_text("로그인")
-    login_btn.click()
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
+        "//*[@id='navbar']/div/a[1]"
+        ))).click()
     #send ID information at ID space
+    time.sleep(1)
     driver.find_element_by_xpath("//*[@id='mem_id']").send_keys(USERID)
     driver.find_element_by_xpath("//*[@id='mem_pwd']").send_keys(PASSWORD)
     #click the login button
@@ -22,19 +24,24 @@ def login(driver , USERID , PASSWORD):
     #now we can next stage, product page
 
 
-#쿠폰 체크 함수
+def logout(driver):
+    driver.find_element_by_xpath("").click
+
+
+
+#쿠폰 체크 함수 #mr functions에는 없는 함수
 def coupon_check(driver):
     coupon_btn = driver.find_element_by_xpath("//*[@id='download-coupon']/div/div[2]")
     if coupon_btn is None:
-        print "No Coupon"
+        print ("No Coupon")
     else:
         coupon_btn.click()
         Alert(driver).accept()
-        print "Coupon is saved"
+        print ("Coupon is saved")
 
 
-#바로 사용 가능하지 체크 함수
-def checkStock(driver):
+#바로 사용 가능하지 체크 함수 #mr fuctions 에서는 없는 함수
+def checkStock(driver , outof_stock_URL):
     stock_check = driver.find_element_by_css_selector(".goodtitle-direct-imgsize img")
     if stock_check is None:
         print ("there is out of stock")
@@ -53,23 +60,28 @@ def checkOpt(driver , quantity):
     ).click()
     WebDriverWait(driver , 2)
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR,
-                                                                    "td.today"
-                                                                    ))).click()
+        "td.today"
+        ))).click()
 
     #상품 설정
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH,
-                                        "//*[@id='select2-parent_option-container']"
-                                        ))).click()
-    driver.find_element_by_css_selector(
-        "li.select2-results__option:last-child"
-    ).click()
+        "//*[@id='option-item-title']/div/span/span[1]/span"
+        ))).click()
+    time.sleep(1)
 
+    #여기 하다가 안되서 있음
+
+    #WebDriverWait(driver, 10).until(
+     #   EC.presence_of_element_located((By.CSS_SELECTOR,
+     #           "html body span.select2-container.select2-container--default.select2-container--open span.select2-dropdown.select2-dropdown--below span.select2-results ul#select2-parent_option-results.select2-results__options li#select2-parent_option-result-u1si-0.select2-results__option"
+     #           ))).click()
+    time.sleep(1)
     #수량설정 1클릭
     i = 0
-    while i < range(int(quantity)):
-        driver.find_element_by_css_selector(
-            "button.btn.count-up"
+    while i < quantity:
+        driver.find_element_by_xpath(
+            "//*[@id='price_option_0-0']/div/div[2]/button[2]"
         ).click()
         i += 1
 
