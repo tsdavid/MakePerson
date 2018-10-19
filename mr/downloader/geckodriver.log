@@ -1,0 +1,65 @@
+1539914748976	geckodriver	INFO	geckodriver 0.21.0 (c7d3022be6420de1ca4076d932aa32b299f3ea10 2018-06-14)
+1539914749138	geckodriver	INFO	Listening on 127.0.0.1:51583
+1539914752001	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\owner\\AppData\\Local\\Temp\\rust_mozprofile.BhYMrAexIGQt"
+1539914757439	Marionette	INFO	Listening on port 51591
+1539914757507	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539914757563	Marionette	DEBUG	[6442450945] Frame script loaded
+1539914757570	Marionette	DEBUG	[6442450945] Frame script registered
+1539914757606	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1539914758522	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1539914760508	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.myrealtrip.com/users/sign_in
+1539914762289	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450952
+1539914763008	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.myrealtrip.com/users/sign_in
+1539914763765	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.myrealtrip.com/users/sign_in
+1539914764644	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.myrealtrip.com/users/sign_in
+1539914764646	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.myrealtrip.com/users/sign_in
+1539914765497	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450949
+1539914765745	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.myrealtrip.com/
+1539914767089	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.myrealtrip.com/
+1539914767113	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.myrealtrip.com/
+1539914767513	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.myrealtrip.com/
+1539914767517	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.myrealtrip.com/
+1539914768047	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450959
+1539914768053	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450962
+1539914768075	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450964
+1539914768078	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450966
+1539914768123	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.myrealtrip.com/traveler/reservations/ongoing
+1539914768931	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.myrealtrip.com/traveler/reservations/ongoing
+1539914769154	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450972
+1539914769281	Marionette	DEBUG	[6442450945] Canceled page load listener because no navigation has been detected
+1539914769440	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450975
+1539914769534	Marionette	DEBUG	[6442450945] Canceled page load listener because no navigation has been detected
+1539914770562	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for https://www.myrealtrip.com/traveler/reservations/ongoing
+1539914771048	Marionette	DEBUG	[6442450945] Received DOM event pagehide for https://www.myrealtrip.com/traveler/reservations/ongoing
+1539914771051	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.myrealtrip.com/traveler/reservations/ongoing
+1539914771725	Marionette	DEBUG	[6442450945] Received DOM event DOMContentLoaded for https://www.myrealtrip.com/traveler/reservations/2032022
+1539914772521	Marionette	DEBUG	[6442450945] Received DOM event pageshow for https://www.myrealtrip.com/traveler/reservations/2032022
+[Parent 3380, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 14064, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6100, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 6100, Chrome_ChildThread] WARNING: pipe error:[Child 15340, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 15340[Parent 3380, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19288, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 191539914792828	Marionette	INFO	Stopped listening on port 51591
+[GPU 14844, Chrome_
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+KLIB_SelfTest return : KLR_OK
+1539914813145	geckodriver	INFO	geckodriver 0.21.0 (c7d3022be6420de1ca4076d932aa32b299f3ea10 2018-06-14)
+1539914813252	geckodriver	INFO	Listening on 127.0.0.1:51701
+1539914816192	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\owner\\AppData\\Local\\Temp\\rust_mozprofile.14J021bHYVWG"
+1539914819558	Marionette	INFO	Listening on port 51709
+1539914820032	Marionette	WARN	TLS certificate errors will be ignored for this session
+1539914820108	Marionette	DEBUG	[6442450945] Frame script loaded
+1539914820109	Marionette	DEBUG	[6442450945] Frame script registered
+1539914820141	Marionette	DEBUG	[6442450945] Received DOM event beforeunload for about:blank
+1539914820899	Marionette	DEBUG	[6442450945] Received DOM event pagehide for about:blank
+1539914821047	Marionette	DEBUG	[6442450945] Received DOM event unload for https://www.myrealtrip.com/users/sign_in
+1539914821050	Marionette	DEBUG	[6442450945] Received observer notification outer-window-destroyed for 6442450945
+1539914821514	Marionette	INFO	Stopped listening on port 51709
+[GPU 8848, Chrome_Chi
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+
+KLIB_SelfTest return : KLR_OK

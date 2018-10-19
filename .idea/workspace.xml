@@ -2,29 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5892bc52-9ef1-43b6-ac12-c70f88c0640d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Sources/DirTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spy/Readme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spy/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MakePerson.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MakePerson.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sources/FilePathChange.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sources/GuideDefCal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Sources/GuideDefQuest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mr/buyer/main2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mr/downloader/down2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sources/excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Sources/excel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mr/buyer/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/mr/buyer/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/spy/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/geckodriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/spy/geckodriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/general/CoorpAgent.py" beforeDir="false" afterPath="$PROJECT_DIR$/spy/CoorpAgent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/general/accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/mr/general/accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mr/general/codes.py" beforeDir="false" afterPath="$PROJECT_DIR$/mr/general/codes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mr/general/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/mr/general/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/spy/Readme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/spy/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/spy/geckodriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mr/spy/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/buyer/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/waug/buyer/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/geckodriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/general/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/waug/general/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/spy/chromedriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/spy/geckodriver.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/waug/spy/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/waug/general/codes.py" beforeDir="false" afterPath="$PROJECT_DIR$/waug/general/codes.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,40 +23,40 @@
     <session id="1524516997">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Readme" value="6" />
           <entry key="log" value="1" />
-          <entry key="py" value="34" />
+          <entry key="py" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="Python" value="34" />
+          <entry key="Python" value="54" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="18" />
           <entry key="Readme" value="71" />
-          <entry key="dummy" value="18" />
-          <entry key="py" value="3225" />
+          <entry key="dummy" value="68" />
+          <entry key="py" value="4852" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="89" />
-          <entry key="Python" value="3243" />
+          <entry key="PLAIN_TEXT" value="139" />
+          <entry key="Python" value="4870" />
         </counts>
       </usages-collector>
     </session>
@@ -79,28 +66,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mr/buyer/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="78" column="36" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="36" />
+            <state relative-caret-position="326">
+              <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
               <folding>
-                <element signature="e#23#33#0" expanded="true" />
+                <element signature="e#23#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mr/buyer/geckodriver.log">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/Sources/GuideDefQuest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="9" selection-end-column="37" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mr/general/functions.py">
+        <entry file="file://$PROJECT_DIR$/Sources/GuideDefCal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="33" column="62" lean-forward="true" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+            <state relative-caret-position="119">
+              <caret line="19" column="9" selection-start-line="19" selection-end-line="19" selection-end-column="9" />
               <folding>
-                <element signature="e#23#66#0" expanded="true" />
-                <element signature="e#386#778#0" />
+                <marker date="1539935308544" expanded="true" signature="154:439" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mr/general/accounts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
+            <state relative-caret-position="-1515">
               <caret line="250" column="14" selection-start-line="250" selection-end-line="250" selection-end-column="14" />
             </state>
           </provider>
@@ -118,29 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mr/general/codes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sources/excel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="43" selection-start-line="5" selection-end-line="43" />
-              <folding>
-                <element signature="e#43#62#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sources/DirTest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="18" />
+            <state relative-caret-position="357">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -167,7 +136,6 @@
       <list>
         <option value="$PROJECT_DIR$/Readme" />
         <option value="$PROJECT_DIR$/myreal/buyer/main.py" />
-        <option value="$PROJECT_DIR$/mr/general/codes.py" />
         <option value="$PROJECT_DIR$/mr/test.py" />
         <option value="$PROJECT_DIR$/mr/buyer/functions.py" />
         <option value="$PROJECT_DIR$/mr/test_vouc_down.py" />
@@ -182,7 +150,6 @@
         <option value="$PROJECT_DIR$/mr/spy/main.py" />
         <option value="$PROJECT_DIR$/waug/dowloader/main.py" />
         <option value="$PROJECT_DIR$/waug/spy/main.py" />
-        <option value="$PROJECT_DIR$/waug/general/codes.py" />
         <option value="$PROJECT_DIR$/mr/DirTest.py" />
         <option value="$PROJECT_DIR$/DirTest.py" />
         <option value="$PROJECT_DIR$/mr/general/DirTest.py" />
@@ -192,16 +159,24 @@
         <option value="$PROJECT_DIR$/waug/general/functions.py" />
         <option value="$PROJECT_DIR$/mr/general/accounts.py" />
         <option value="$PROJECT_DIR$/Sources/excel.py" />
+        <option value="$PROJECT_DIR$/mr/buyer/main2.py" />
+        <option value="$PROJECT_DIR$/mr/downloader/down2.py" />
+        <option value="$PROJECT_DIR$/mr/downloader/test.py" />
+        <option value="$PROJECT_DIR$/Sources/DirTest.py" />
+        <option value="$PROJECT_DIR$/Sources/FilePathChange.py" />
+        <option value="$PROJECT_DIR$/waug/general/codes.py" />
+        <option value="$PROJECT_DIR$/mr/general/codes.py" />
+        <option value="$PROJECT_DIR$/mr/buyer/test.py" />
         <option value="$PROJECT_DIR$/mr/general/functions.py" />
+        <option value="$PROJECT_DIR$/Sources/test.py" />
         <option value="$PROJECT_DIR$/mr/buyer/main.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="970" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -211,7 +186,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,10 +226,22 @@
               <item name="MakePerson" type="462c0819:PsiDirectoryNode" />
               <item name="spy" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MakePerson" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MakePerson" type="462c0819:PsiDirectoryNode" />
+              <item name="waug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MakePerson" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MakePerson" type="462c0819:PsiDirectoryNode" />
+              <item name="waug" type="462c0819:PsiDirectoryNode" />
+              <item name="general" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,19 +249,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\owner\PycharmProjects\MakePerson\spy" />
-      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug\spy" />
-      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug\dowloader" />
-      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug\buyer" />
-      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\owner\PycharmProjects\MakePerson\Sources" />
       <recent name="C:\Users\owner\PycharmProjects\MakePerson\spy" />
       <recent name="C:\Users\owner\PycharmProjects\MakePerson" />
       <recent name="C:\Users\owner\PycharmProjects\MakePerson\mr" />
       <recent name="C:\Users\owner\PycharmProjects\MakePerson\mr\spy" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\owner\PycharmProjects\MakePerson\spy" />
+      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug\spy" />
+      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug\dowloader" />
+      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug\buyer" />
+      <recent name="C:\Users\owner\PycharmProjects\MakePerson\waug" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -290,29 +276,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="excel" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MakePerson" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sources" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sources/excel.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="functions (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test (2)">
+    <configuration name="codes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MakePerson" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -324,28 +289,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mr/general/functions.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="MakePerson" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/waug/general" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/waug/general/functions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mr/general/codes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -375,7 +319,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MakePerson" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -383,11 +327,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/waug/buyer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mr/buyer" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/waug/buyer/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\owner\PycharmProjects\MakePerson\Sources\GuideDefCal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MakePerson" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Sources" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\owner\PycharmProjects\MakePerson\Sources\GuideDefQuest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="MakePerson" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mr/downloader" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\owner\PycharmProjects\MakePerson\Sources\FilePathChange.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -397,19 +383,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.functions" />
-      <item itemvalue="Python.functions (1)" />
-      <item itemvalue="Python.excel" />
       <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.codes" />
+      <item itemvalue="Python.test (1)" />
+      <item itemvalue="Python.test (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test (2)" />
+        <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.excel" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.functions (1)" />
-        <item itemvalue="Python.functions" />
+        <item itemvalue="Python.codes" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -427,14 +413,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15135492" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3077957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32954547" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3409091" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3448276" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -492,20 +478,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mr/ussmr_asaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasssssssssssssss.html" />
-    <entry file="file://$PROJECT_DIR$/mr/downloader/testVouFileName.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mr/downloader/test_vouc_down.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mr/buyer/functions.py" />
     <entry file="file://$PROJECT_DIR$/mr/general/Readme">
       <provider selected="true" editor-type-id="text-editor">
@@ -540,9 +512,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/mr/spy/main.py" />
-    <entry file="file://$PROJECT_DIR$/waug/general/codes.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/waug/dowloader/main.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -575,57 +544,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mr/general/codes.py">
+    <entry file="file://$PROJECT_DIR$/mr/buyer/geckodriver.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP1_/testVouFileName.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+        <state relative-caret-position="300">
+          <caret line="25" column="18" lean-forward="true" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP2_/mrDown.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="23" lean-forward="true" selection-end-line="110" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mr/downloader/test_vouc_down.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-219">
+          <caret line="23" column="15" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mr/downloader/testVouFileName.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/FilePathChange.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sources/DirTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="18" />
+          <caret line="1" column="10" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mr/downloader/down2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="e#23#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/_AZTMP0_/myreal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="123" column="4" selection-start-line="123" selection-start-column="4" selection-end-line="137" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/waug/general/codes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="38" column="94" selection-start-line="38" selection-start-column="90" selection-end-line="38" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mr/general/accounts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1515">
+          <caret line="250" column="14" selection-start-line="250" selection-end-line="250" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sources/excel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="43" selection-start-line="5" selection-end-line="43" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#43#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mr/general/accounts.py">
+    <entry file="file://$PROJECT_DIR$/mr/general/codes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="250" column="14" selection-start-line="250" selection-end-line="250" selection-end-column="14" />
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mr/buyer/geckodriver.log">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/mr/buyer/main2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
+          <folding>
+            <element signature="e#23#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/GuideDefCal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="19" column="9" selection-start-line="19" selection-end-line="19" selection-end-column="9" />
+          <folding>
+            <marker date="1539935308544" expanded="true" signature="154:439" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sources/GuideDefQuest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="9" selection-end-column="37" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mr/general/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="33" column="62" lean-forward="true" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+        <state relative-caret-position="-1630">
+          <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
           <folding>
             <element signature="e#23#66#0" expanded="true" />
             <element signature="e#386#778#0" />
+            <marker date="1539936573821" expanded="true" signature="8759:8760" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mr/buyer/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="36" />
+        <state relative-caret-position="326">
+          <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
           <folding>
-            <element signature="e#23#33#0" expanded="true" />
+            <element signature="e#23#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

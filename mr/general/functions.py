@@ -6,7 +6,8 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
 from requests import get
-
+import pandas as pd
+import numpy as np
 
 #functions
 
@@ -137,51 +138,31 @@ def res_qunt(driver , quantity):
                        ))).click()
 
 def order(driver , L_NAME , F_NAME ,FULL_NAME , BIRTH_DATE , PHONE_NB):
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
-         "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[2]/div[2]/input"
-             ))).send_keys(L_NAME)
+    WebDriverWait(driver, 100).until(EC.presence_of_element_located(
+        (By.XPATH, "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[2]/div[2]/input"))).send_keys(L_NAME)
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[3]/div[2]/input"
-        ).send_keys(F_NAME)
+        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[3]/div[2]/input").send_keys(F_NAME)
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[4]/div[2]/input"
-         ).send_keys(FULL_NAME)
+        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[4]/div[2]/input").send_keys(FULL_NAME)
+    driver.find_element_by_xpath("//*[@id='input-icc']").click()
     driver.find_element_by_xpath(
-        "//*[@id='input-icc']"
-          ).click()
+        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[5]/div[2]/select/option[2]").click()
     driver.find_element_by_xpath(
-        "//*[@id='input-icc']/option[2]"
-        ).click()
+        "/html/body/main/section/div/form/div[2]/div[1]/div[2]/div/div[6]/div[2]/input").send_keys(BIRTH_DATE)
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[1]/div[2]/div/div[6]/div[2]/input"
-        ).send_keys(BIRTH_DATE)
+        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/input").send_keys(PHONE_NB)
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[1]/div[2]/div[2]/input"
-        ).send_keys(PHONE_NB)
+        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select").click()
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select"
-        ).click()
+        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select/option[5]").click()
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[2]/div/select/option[3]"
-        ).click()
-    time.sleep(1)
+        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select").click()
     driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select"
-        ).click()
-    driver.find_element_by_xpath(
-        "//*[@id='reservation_form']/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select/option[5]"
-        ).click()
+        "/html/body/main/section/div/form/div[2]/div[2]/div[2]/div/div[2]/div[3]/div/select/option[4]").click()
 
-    driver.find_element_by_xpath(
-        "//*[@id='type-wcard']"
-        ).click()
-    driver.find_element_by_xpath(
-        "//*[@id='checkbox_terms_traveler']"
-        ).click()
-    driver.find_element_by_xpath(
-        "//*[@id='reservation-btn']"
-        ).click()
-
+    driver.find_element_by_xpath("//*[@id='type-wcard']").click()
+    driver.find_element_by_xpath("//*[@id='checkbox_terms_traveler']").click()
+    driver.find_element_by_xpath("//*[@id='reservation-btn']").click()
 
 def ticket(driver):
     # 티켓 받는 곳까지 가는 기다림
@@ -223,21 +204,69 @@ def clk_ticket(driver , quantity):
 
 def cal(amount , rule):
     total_amount = float(amount)
-    global nomal_rule
-    nomal_rule = float(rule)
-    global real_trans
-    real_trans =  float(total_amount / nomal_rule) #25.25
-    global total_trans
+    normal_rule = float(rule)
+    real_trans =  float(total_amount / normal_rule) #25.25
     total_trans = int(round(real_trans + 0.5)) #26
-    global perfect_trans
     perfect_trans = round(real_trans - 0.5) #25
-    global remainder
     remainder = real_trans - perfect_trans #0.25
 
-    return real_trans , perfect_trans , remainder
+    return total_trans , real_trans , perfect_trans , remainder
 
 def download(url , file_name):
     with open(file_name, "wb")as file:
         response = get(url)
         file.write(response.content)
 
+def question():
+    global TotalAmount
+    global product
+    global prc_date
+    global select_account
+    quantity = input("how many tickets do you want to buy? :")
+    product = input("what product do you want buy? \n"
+                    "hkdiseny = 91  \n uss = 90 \n"
+                    ":")
+    prc_date = input("reservation date :")
+    select_account = input("which accounts do you want to start?")
+
+    return quantity,product,prc_date,select_account
+
+
+# index_format(index) & columns_format(columns)정의
+def PrintExcel(AccountNum ,User ,  Item , Compnay , Card ,Qunt , ResDate , PayTime):
+
+    index_format = []
+    for iz in range(int(perfect_trans)):
+        index_format.append(iz)
+
+    columns_format = ['AccountNum', 'User', 'Item', 'Compnay', 'Card', 'Qunt', 'ResDate', 'PayTime']
+
+    # DataFrame 초기화
+    values = pd.DataFrame(index=index_format, columns=columns_format)
+
+    for ii in range(int(perfect_trans)):
+        # fill in x values into column index zero of values
+        values.iloc[ii, 0] = int(select_account) + int(ii)  # AccountNum
+        values.iloc[ii, 1] = UserList[ii]  # User
+        values.iloc[ii, 2] = product  # Item
+        values.iloc[ii, 3] = company  # Compnay
+        values.iloc[ii, 4] = "신한카드"  # Card
+        values.iloc[ii, 5] = "4"  # Qunt
+        values.iloc[ii, 6] = prc_date  # ResDate
+        values.iloc[ii, 7] = y[ii]  # PayTime
+
+    # saves DataFrame(values) into an Excel file
+    values.to_excel('./test.xlsx',
+                    sheet_name='Sheet1',
+                    columns=columns_format,
+                    header=True,
+                    index=index_format,
+                    index_label="y = sin(x)",
+                    startrow=1,
+                    startcol=0,
+                    engine=None,
+                    merge_cells=True,
+                    encoding=None,
+                    inf_rep='inf',
+                    verbose=True,
+                    freeze_panes=None)

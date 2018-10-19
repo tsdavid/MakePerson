@@ -1,5 +1,4 @@
 #-*- coding: utf-8 -*-
-import sys
 import random
 import sys
 sys.path.insert(0, '/Users/owner/PycharmProjects/MakePerson/mr/general/')
@@ -17,115 +16,66 @@ import pandas as pd
 import numpy as np
 
 
-#구매전 정보 받는 함수
-def question():
-    global quantity
-    global company
-    global product
-    global prc_date
-    global select_account
-    quantity = input("how many tickets do you want to buy? :")
-    company = input("which company do you want buy from?  \n"
-                    "myreal = 0 \n"
-                    "waug = 1\n"
-                    "enter ::::: ")
-    product = input("what product do you want buy? \n"
-                    "hkdiseny = 91  \n uss = 90 \n"
-                    ":")
-    prc_date = input("reservation date :")
-    select_account = input("which accounts do you want to start?")
-
-def cal(amount , rule):
-    total_amount = float(amount)
-    global nomal_rule
-    nomal_rule = float(rule)
-    global real_trans
-    real_trans =  float(total_amount / nomal_rule) #25.25
-    global total_trans
-    total_trans = int(round(real_trans + 0.5)) #26
-    global perfect_trans
-    perfect_trans = round(real_trans - 0.5) #25
-    global remainder
-    remainder = real_trans - perfect_trans #0.25
-
-    return real_trans , perfect_trans , remainder
 
 
 if __name__ == "__main__":
-    question()
+    #미리 받는 정보
+    ResultQuest= fc.question()
+    ResultCal= fc.cal(ResultQuest[0], cd.company_code['buy_rule'])
+    # fc.question[o] #총 수량 TotalAmount
+    # fc.question[1] #상품 코드 product
+    # fc.question[2] #예약할 날짜 prc_date
+    # fc.question[3] #계정 번호 select_account
+
+    #드라이버 선택
     #driver = webdriver.Firefox()
     driver = webdriver.Chrome('/Users/owner/PycharmProjects/MakePerson/mr/buyer/chromedriver')
 
 
+    #로그인 URL
+    driver.get(cd.company_code['login_url'])
 
-    driver.get(cd.company_code[int(company)]['login_url'])
+    # total_trans , real_trans , perfect_trans , remainder
+    # fc.cal(101,4)[0]  #total_trans
+    # fc.cal(101,4)[1]  #real_trans
+    # fc.cal(101,4)[2]  #perfect_trans
+    # fc.cal(101,4)[3]  #remainder
 
 
-
-    cal(quantity, cd.company_code[int(company)]['buy_rule'])
-
-
+    #quantity_list 는 구매횟수 저장한 리스트
     quantity_list = []
-    for i in range(int(perfect_trans)):
-        quantity_list.append(nomal_rule)
-    quantity_list.append(float(remainder) * int(nomal_rule))
+    for i in range(int(ResultCal[2])):
+        quantity_list.append(cd.company_code['buy_rule'])
+    quantity_list.append(float(ResultCal[3]) * int(cd.company_code['buy_rule']))
 
-    buyurl_code = 'item_url_' + str(product)
+
+
+    buyurl_code = 'item_url_' + str(ResultQuest[1])
 
 
     UserList = []
     BuyTimeList=[]
     #일단 perfect_trans로 for를 준다 total_trans로 주게되면 나머지값에 대한 구매 처리가 생각하기 어려움
-    for i in range(int(perfect_trans)):
-        fc.login(driver , ac.MrKimnKimsUser[int(select_account) + i] + "@kimnkims.com" , "tongsung8116!")
-        driver.get(cd.company_code[int(company)][buyurl_code])
-        fc.reservation(driver , prc_date , 4)
-        fc.order(driver , ac.MrKimnKimsUser[int(select_account) + i][0] , ac.MrKimnKimsUser[int(select_account) + i] ,ac.MrKimnKimsUser[int(select_account) + i] + "." + ac.MrKimnKimsUser[int(select_account) + i][0] , 950901, "11111111111")
+
+    for i in range(len(quantity_list)):
+        fc.login(driver , ac.MrKimnKimsUser[int(ResultQuest[3]) + i] + "@kimnkims.com" , "tongsung8116!")
+        driver.get(cd.company_code[buyurl_code])
+        fc.reservation(driver , ResultQuest[2] , quantity_list[i])
+        fc.order(driver , ac.MrKimnKimsUser[int(ResultQuest[3]) + i][0] , ac.MrKimnKimsUser[int(ResultQuest[3]) + i] ,ac.MrKimnKimsUser[int(ResultQuest[3]) + i] + "." + ac.MrKimnKimsUser[int(ResultQuest[3]) + i][0] , 950901, "11111111111")
         fc.ticket(driver)
         #fc.clk_ticket(driver , int(quantity_list[i]))
 
         BuyTime = driver.find_element_by_xpath("/html/body/main/div/div[4]/div[5]/div/div[2]/div/div[1]/div[1]/div[2]").text
 
 
-        UserList.append(ac.MrKimnKimsUser[int(select_account) + i])
+        UserList.append(ac.MrKimnKimsUser[int(ResultQuest[3]) + i])
         BuyTimeList.append(BuyTime)
 
         fc.logout(driver)
 
-    # index_format(index) & columns_format(columns)정의
-    index_format = []
-    for iz in range(int(perfect_trans)):
-        index_format.append(iz)
 
-    columns_format = ['AccountNum', 'User', 'Item', 'Compnay', 'Card', 'Qunt', 'ResDate', 'PayTime']
-
-    # DataFrame 초기화
-    values = pd.DataFrame(index=index_format, columns=columns_format)
-
-
-    for ii in range(int(perfect_trans)):
-        # fill in x values into column index zero of values
-        values.iloc[ii, 0] = int(select_account) + int(ii)  # AccountNum
-        values.iloc[ii, 1] = UserList[ii]  # User
-        values.iloc[ii, 2] = product  # Item
-        values.iloc[ii, 3] = company  # Compnay
-        values.iloc[ii, 4] = "신한카드"  # Card
-        values.iloc[ii, 5] = "4"  # Qunt
-        values.iloc[ii, 6] = prc_date  # ResDate
-        values.iloc[ii, 7] = y[ii]  # PayTime
-
-    # saves DataFrame(values) into an Excel file
-    values.to_excel('./test.xlsx',
-                    sheet_name='Sheet1',
-                    columns=columns_format,
-                    header=True,
-                    index=index_format,
-                    index_label="y = sin(x)",
-                    startrow=1,
-                    startcol=0,
-                    engine=None,
-                    merge_cells=True,
-                    encoding=None,
-                    inf_rep='inf',
-                    verbose=True,
-                    freeze_panes=None)
+    fc.PrintExcel()
+    
+    
+    
+    #구매횟수를 quantitly_list으로 했으니까 이제 티켓을 클릭하는 것도 그렇게 하면됨
