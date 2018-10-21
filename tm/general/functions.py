@@ -49,11 +49,11 @@ def reservation(driver , quantity):
     ).click()
 
 
-def order(driver , Name , FIrName , Email):
+def order(driver , Name , FIrName , Email , PayBank):
     #여권영문 이름
-    driver.find_element_by_xpath(
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,
         "//*[@id='_custom_fields']/div/div/table/tbody/tr[1]/td/input"
-    ).send_keys(Name)
+           ))).send_keys(Name)
     #여권영문 성
     driver.find_element_by_xpath(
         "//*[@id='_custom_fields']/div/div/table/tbody/tr[2]/td/input"
@@ -67,18 +67,32 @@ def order(driver , Name , FIrName , Email):
     driver.find_element_by_xpath("//*[@id='_iselect_payInfo_card']").click()
     time.sleep(1)
 
-    """  카드 정보ㅉ는 
-    //*[@id="_iselect_payInfo_card"]/option[8]
-    이  포맷에서 맨 뒤 숫자 8만 바뀌는 듯
-    2 : 신한
-    3 : 국민
-    4 : BC
-    5 : 현대
-    6 : 우리
-    7 : 하나
-    8 : KEB
-    9 : NH
-     11: 롯데
-    
-    
-    """
+   #결제 카드사 선택
+    PayCard = "//*[@id='_iselect_payInfo_card']/option[" +  PayBank  + "]"
+    driver.find_element_by_xpath(
+        PayCard
+    ).click()
+
+    # 약관동의
+    driver.find_element_by_xpath(
+        "//*[@id='_terms']/dl/dt/label"
+    ).click()
+
+    # 결제하기 버튼
+    driver.find_element_by_xpath(
+        "//*[@id='_confirmCheckout']"
+    ).click()
+
+    time.sleep(0.5)
+
+    #버튼 클릭 후 팝업 확인버튼 클릭
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,
+       "//*[@id='_continueConfirm']"
+       ))).click()
+
+
+#결제부분
+def Payment(driver):
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,
+       "/html/body/div/ul/li[2]/a"
+       ))).click()
