@@ -1,7 +1,7 @@
 #-*- coding: utf-8 -*-
 import random
 import sys
-sys.path.insert(0, '/Users/owner/PycharmProjects/MakePerson/mr/general/')
+sys.path.insert(0, '/Users/user/PycharmProjects/MakePerson/mr/general/')
 import functions  as fc
 import accounts as ac
 import codes as cd
@@ -29,11 +29,10 @@ if __name__ == "__main__":
 
     #드라이버 선택
     #driver = webdriver.Firefox()
-    driver = webdriver.Chrome('/Users/owner/PycharmProjects/MakePerson/mr/buyer/chromedriver')
+    driver = webdriver.Chrome('/Users/user/PycharmProjects/MakePerson/mr/buyer/chromedriver')
 
 
-    #로그인 URL
-    driver.get(cd.company_code['login_url'])
+
 
     # total_trans , real_trans , perfect_trans , remainder
     # fc.cal(101,4)[0]  #total_trans
@@ -58,6 +57,8 @@ if __name__ == "__main__":
     #일단 perfect_trans로 for를 준다 total_trans로 주게되면 나머지값에 대한 구매 처리가 생각하기 어려움
 
     for i in range(len(quantity_list)):
+        # 로그인 URL
+        driver.get(cd.company_code['login_url'])
         fc.login(driver , ac.MrKimnKimsUser[int(ResultQuest[3]) + i] + "@kimnkims.com" , "tongsung8116!")
         driver.get(cd.company_code[buyurl_code])
         fc.reservation(driver , ResultQuest[2] , quantity_list[i])
@@ -65,7 +66,10 @@ if __name__ == "__main__":
         fc.ticket(driver)
         #fc.clk_ticket(driver , int(quantity_list[i]))
 
-        BuyTime = driver.find_element_by_xpath("/html/body/main/div/div[4]/div[5]/div/div[2]/div/div[1]/div[1]/div[2]").text
+        BuyTime = driver.find_element_by_xpath(
+            "/html/body/main/div/div[4]/div[4]/div/div[2]/div/div[1]/div[1]/div[2]"
+
+        ).text
 
 
         UserList.append(ac.MrKimnKimsUser[int(ResultQuest[3]) + i])
@@ -74,7 +78,7 @@ if __name__ == "__main__":
         fc.logout(driver)
 
 
-    fc.PrintExcel()
+    fc.PrintExcel(quantity_list, UserList ,ResultCal[2] ,BuyTimeList)
     
     
     

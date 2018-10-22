@@ -10,6 +10,12 @@ from datetime import datetime
 from requests import get
 import os
 import PyPDF2
+import sys
+sys.path.insert(0, '/Users/user/PycharmProjects/MakePerson/mr/general/')
+#import functions  as fc
+import accounts as ac
+#import codes as cd
+
 
 def logout(driver):
     #click the uppon img
@@ -42,17 +48,8 @@ def ticket(driver):
          "/html/body/main/div/div[4]/div[2]/div[2]/div/a"))).click()
 
 
-downlist = [
-"donnelly@kimnkims.com",
-"duffy@kimnkims.com",
-"duncan@kimnkims.com",
-"dyer@kimnkims.com",
-"farmer@kimnkims.com",
-"farrell@kimnkims.com",
-"faulkner@kimnkims.com",
-"finch@kimnkims.com"
-]
-driver = webdriver.Chrome('/Users/owner/PycharmProjects/MakePerson/mr/downloader/chromedriver')
+downlist = ac.MrKimnKimsAcc[46:]
+driver = webdriver.Chrome('/Users/user/PycharmProjects/MakePerson/mr/downloader/chromedriver')
 for i in range(len(downlist)):
     #driver = webdriver.Chrome('/Users/user/PycharmProjects/buyer/chromedriver')
     driver.get("https://www.myrealtrip.com/users/sign_in")
@@ -84,25 +81,25 @@ for i in range(len(downlist)):
     # clk_ticket(driver) 티켓 출력하는 함수
     now = datetime.now()
     for i in range(4):
-        voucher_name = "mr" + "HKD" + str(now.minute) + str(now.second) + "_" + str(i) + ".pdf"
+        voucher_name = "mr" + "uss" + str(now.minute) + str(now.second) + "_" + str(i) + ".pdf"
         download(voucher_list[i], voucher_name)
 
         pdfFileObj = open(voucher_name, 'rb')  # 'rb' for read binary mode
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
         pageObj = pdfReader.getPage(0)  # '9' is the page number
-        vou_reserCode = 'mr' + '_' + 'HKD' + '_' + str(pageObj.extractText())[13:31] + '.pdf'
+        vou_reserCode = 'mr' + '_' + 'uss' + '_' + str(pageObj.extractText())[13:31] + '.pdf'
         print(vou_reserCode)
 
         pdfFileObj.close()
 
-       # ff = '/Users/user/PycharmProjects/buyer/myreal/' + voucher_name
-       # ffr = ff.replace(voucher_name, vou_reserCode)
-       # os.rename(ff, ffr)
-       # time.sleep(5)
+        ff = '/Users/user/PycharmProjects/MakePerson/mr/downloader/' + voucher_name
+        ffr = ff.replace(voucher_name, vou_reserCode)
+        os.rename(ff, ffr)
+        time.sleep(5)
     # 다음 계정으로 넘어가기
     logout(driver)
     WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,
-                                                                   "/html/body/div[3]/header/nav/div[1]/div[3]/ul/li[3]/a"
-                                                                   ))).click()
+                               "/html/body/div[3]/header/nav/div[1]/div[3]/ul/li[3]/a"
+                               ))).click()
     driver.refresh()

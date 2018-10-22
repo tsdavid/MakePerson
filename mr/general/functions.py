@@ -7,6 +7,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from bs4 import BeautifulSoup
 from requests import get
 import pandas as pd
+import os
+from datetime import datetime
 import numpy as np
 
 #functions
@@ -233,10 +235,10 @@ def question():
 
 
 # index_format(index) & columns_format(columns)정의
-def PrintExcel(AccountNum ,User ,  Item , Compnay , Card ,Qunt , ResDate , PayTime):
+def PrintExcel(quantity_list , UserList ,     prc_date , BuyTimeList):
 
     index_format = []
-    for iz in range(int(perfect_trans)):
+    for iz in range(len(quantity_list)):
         index_format.append(iz)
 
     columns_format = ['AccountNum', 'User', 'Item', 'Compnay', 'Card', 'Qunt', 'ResDate', 'PayTime']
@@ -244,17 +246,60 @@ def PrintExcel(AccountNum ,User ,  Item , Compnay , Card ,Qunt , ResDate , PayTi
     # DataFrame 초기화
     values = pd.DataFrame(index=index_format, columns=columns_format)
 
-    for ii in range(int(perfect_trans)):
+    for ii in range(len(quantity_list)):
         # fill in x values into column index zero of values
         values.iloc[ii, 0] = int(select_account) + int(ii)  # AccountNum
         values.iloc[ii, 1] = UserList[ii]  # User
         values.iloc[ii, 2] = product  # Item
-        values.iloc[ii, 3] = company  # Compnay
+        values.iloc[ii, 3] = "Myreal"  # Compnay
         values.iloc[ii, 4] = "신한카드"  # Card
-        values.iloc[ii, 5] = "4"  # Qunt
+        values.iloc[ii, 5] = quantity_list[ii]  # Qunt
         values.iloc[ii, 6] = prc_date  # ResDate
-        values.iloc[ii, 7] = y[ii]  # PayTime
+        values.iloc[ii, 7] = BuyTimeList[ii]  # BuyTime
 
+    os.chdir("C:/Users/user/Desktop")
+    now = datetime.now()
+    # saves DataFrame(values) into an Excel file
+    values.to_excel('./test.xlsx',
+                    sheet_name='Sheet1',
+                    columns=columns_format,
+                    header=True,
+                    index=index_format,
+                    index_label="y = sin(x)",
+                    startrow=1,
+                    startcol=0,
+                    engine=None,
+                    merge_cells=True,
+                    encoding=None,
+                    inf_rep='inf',
+                    verbose=True,
+                    freeze_panes=None)
+
+
+def PrintExcel2(quantity_list , UserList ,     prc_date , BuyTimeList):
+
+    index_format = []
+    for iz in range(len(quantity_list)):
+        index_format.append(iz)
+
+    columns_format = ['AccountNum', 'User', 'Item', 'Compnay', 'Card', 'Qunt', 'ResDate', 'PayTime']
+
+    # DataFrame 초기화
+    values = pd.DataFrame(index=index_format, columns=columns_format)
+
+    for ii in range(len(quantity_list)):
+        # fill in x values into column index zero of values
+        values.iloc[ii, 0] = int(select_account) + int(ii)  # AccountNum
+        values.iloc[ii, 1] = UserList[ii]  # User
+        values.iloc[ii, 2] = product  # Item
+        values.iloc[ii, 3] = "Myreal"  # Compnay
+        values.iloc[ii, 4] = "신한카드"  # Card
+        values.iloc[ii, 5] = quantity_list[ii]  # Qunt
+        values.iloc[ii, 6] = prc_date  # ResDate
+        values.iloc[ii, 7] = BuyTimeList[ii]  # BuyTime
+
+    os.chdir("C:/Users/user/Desktop")
+    now = datetime.now()
     # saves DataFrame(values) into an Excel file
     values.to_excel('./test.xlsx',
                     sheet_name='Sheet1',
