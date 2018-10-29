@@ -169,13 +169,13 @@ def order(driver , L_NAME , F_NAME ,FULL_NAME , BIRTH_DATE , PHONE_NB):
 def ticket(driver):
     # 티켓 받는 곳까지 가는 기다림
     # 마이페이지 클릭
-    WebDriverWait(driver, 1000000).until(EC.presence_of_element_located((By.XPATH,
+    WebDriverWait(driver, 10000000000000).until(EC.presence_of_element_located((By.XPATH,
          "/html/body/div[3]/header/nav/div[1]/div[3]/ul/li[4]/a/img"
          ))).click()
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
+    WebDriverWait(driver, 1000000000).until(EC.presence_of_element_located((By.XPATH,
          "/html/body/div[3]/header/nav/div[1]/div[3]/div/ul/li[2]/div[2]"
         ))).click()
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
+    WebDriverWait(driver, 1000000000).until(EC.presence_of_element_located((By.XPATH,
          "/html/body/main/div/div[4]/div[2]/div[2]/div/a"
         ))).click()
 

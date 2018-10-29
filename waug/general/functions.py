@@ -10,6 +10,7 @@ import requests
 
 #로그인 함수
 def login(driver , USERID , PASSWORD):
+    time.sleep(1)
     #push the "login button" at main page
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
         "//*[@id='navbar']/div/a[1]"
@@ -24,8 +25,6 @@ def login(driver , USERID , PASSWORD):
     #now we can next stage, product page
 
 
-def logout(driver):
-    driver.find_element_by_xpath("").click
 
 
 
@@ -54,29 +53,44 @@ def checkStock(driver , outof_stock_URL):
 
 #수량 및 예약 날짜 설정 함수
 
-def checkOpt(driver , quantity):
+def reservation(driver ,quantity):
+    
+    #쿠폰 발급
+    coupon_btn = driver.find_element_by_xpath("//*[@id='download-coupon']/div/div[2]")
+    if coupon_btn is None:
+        print("No Coupon")
+    else:
+        coupon_btn.click()
+        time.sleep(2)
+        Alert(driver).accept()
+        print("Coupon is saved")
+
+
     driver.find_element_by_xpath(
         "//*[@id='s_date']"
     ).click()
-    WebDriverWait(driver , 2)
+    time.sleep(1)
+
+    #WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR,
+     #                                                                    "body > div.datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-bottom > div.datepicker-days > table > tbody > tr:nth-child(4) > td:nth-child(4)"
+      #                                                                   ))).click()
+    #오늘 날짜로 달력설정
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR,
         "td.today"
         ))).click()
 
+    time.sleep(2)
     #상품 설정
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH,
+    WebDriverWait(driver, 10000).until(EC.presence_of_element_located((By.XPATH,   #옵션을 선택해 주세요.
         "//*[@id='option-item-title']/div/span/span[1]/span"
         ))).click()
     time.sleep(1)
+    WebDriverWait(driver, 10000).until(EC.presence_of_element_located((By.XPATH,  # USS 입장권
+           "//*[@id='select2-parent_option-results']/li[2]"
+    ))).click()
 
-    #여기 하다가 안되서 있음
 
-    #WebDriverWait(driver, 10).until(
-     #   EC.presence_of_element_located((By.CSS_SELECTOR,
-     #           "html body span.select2-container.select2-container--default.select2-container--open span.select2-dropdown.select2-dropdown--below span.select2-results ul#select2-parent_option-results.select2-results__options li#select2-parent_option-result-u1si-0.select2-results__option"
-     #           ))).click()
-    time.sleep(1)
+   #여기 하다가 안되서 있음
     #수량설정 1클릭
     i = 0
     while i < quantity:
@@ -91,45 +105,67 @@ def checkOpt(driver , quantity):
         "//*[@id='btn-order']"
     ).click()
 
-    driver.find_element_by_xpath(
-        "//*[@id='sec_option_box']/div[5]/div[1]"
-    ).click()
-
 
 
 #구매시 예약 정보 넣는 함수
 def order(driver , F_NAME , MD_PHONE , LT_PHONE , L_NAME):
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
+    WebDriverWait(driver, 10000000000).until(EC.presence_of_element_located((By.XPATH,
                         "//*[@id='frm-order-info']/div/div[2]/div[1]/input"
-                                                                    ))).send_keys(F_NAME)
-    driver.find_element_by_css_selector(
-        "input.widthauto.user-tel-mobile-number"
+                            ))).send_keys(F_NAME)
+    driver.find_element_by_xpath(
+        "//*[@id='frm-order-info']/div/div[2]/div[2]/span[3]/input[1]"
         ).send_keys(MD_PHONE)
-    driver.find_element_by_css_selector(
-        "input.widthauto.user-tel-mobile-number:last-child"
+    driver.find_element_by_xpath(
+        "//*[@id='frm-order-info']/div/div[2]/div[2]/span[3]/input[2]"
        ).send_keys(LT_PHONE)
-    driver.find_element_by_css_selector(
-        "input.widthauto.first.order-info-eng-name"
+    driver.find_element_by_xpath(
+        "//*[@id='frm-order-info']/div/div[2]/div[3]/input[1]"
     ).send_keys(F_NAME)
     driver.find_element_by_xpath(
         "//*[@id='frm-order-info']/div/div[2]/div[3]/input[2]"
     ).send_keys(L_NAME)
 
     #입력완료 버튼 클릭
-    driver.find_element_by_css_selector(
-        "button#btn-info-write").click()
+    driver.find_element_by_xpath(
+        "//*[@id='btn-info-write']"
+    ).click()
 
 
 #결제 정보 넣는 함수
 def payment(driver):
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//*[@id='content']/form/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[3]/div/label/p"))).click()
-    WebDriverWait(driver, 2)
-    driver.find_element_by_xpath("//*[@id='chk-order-agree']").click()
-   # driver.find_element_by_xpath("//*[@id='btn-modal-coupon']").click()
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,   #신용카드 선택
+        "//*[@id='content']/form/div/div[2]/div/div[2]/div[1]/div/div/div/div/div[3]/div/label/p"
+            ))).click()
+    driver.find_element_by_xpath( #개인정보 제 3자 제공동의
+        "//*[@id='chk-order-agree']"
+    ).click()
+
+    driver.find_element_by_xpath( #쿠폰함 클릭
+        "//*[@id='btn-modal-coupon']"
+    ).click()
+
+    time.sleep(2)
+    CoupCode = driver.find_element_by_xpath(
+        "//*[@id='coupon-available']/div/div/div/div/div[1]/div/div/div[1]/div[2]/span"
+    ).text
+    if CoupCode == "USS7000":  #만약에 쿠폰 코드가 맞다면 쿠폰 사용하기 클릭
+        driver.find_element_by_xpath(
+            "//*[@id='coupon-available']/div/div/div/div/div[1]/div"
+        ).click()
+    driver.find_element_by_xpath(  #쿠폰 적용하기
+        "//*[@id='btn-apply-coupon']"
+         ).click()
+    time.sleep(2)
+    Alert(driver).accept()
+    print("Coupon is applied")
+
     #포인트 사용
-    WebDriverWait(driver, 2)
-    driver.find_element_by_xpath("/html/body/div[1]/div[4]/form/div/div[2]/div/div[2]/div[2]/div/div/div/div[2]/div[2]/button").click()
+    time.sleep(3)
+    driver.find_element_by_xpath(
+        "//*[@id='order-point-form']/div[2]/button"
+    ).click()
+
+
    #구매버튼
     WebDriverWait(driver, 2)
     driver.find_element_by_xpath("//*[@id='btn-order-pay']").click()
@@ -146,18 +182,21 @@ def payment(driver):
 
 #티켓을 킄릭하는 함수
 
-def eticket(driver):
-    WebDriverWait(driver, 10000).until(
-        EC.presence_of_element_located((By.XPATH,
-                                        "/html/body/div[1]/div[4]/div/div[2]/div[3]/div[2]/a"))).click()
-    WebDriverWait(driver, 100).until(
-        EC.presence_of_element_located((By.XPATH,
-                                        "/html/body/div[1]/div[4]/div/div/div/div[3]/div[1]/div[1]/div[2]"))).click()
+def ticket(driver):
+    WebDriverWait(driver, 10000).until(EC.presence_of_element_located((By.XPATH,
+            "/html/body/div[1]/div[4]/div/div[2]/div[3]/div[2]/a"
+           ))).click()
+    WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.XPATH,
+            "/html/body/div[1]/div[4]/div/div/div/div[3]/div[1]/div[1]/div[2]"
+             ))).click()
 
     #티켓클릭
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH,
-                                        "/html/body/div[1]/div[4]/div[1]/div/div/div[3]/div/div[11]/div[1]/a/div"))).click()
+    #WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH,
+     #   "/html/body/div[1]/div[4]/div[1]/div/div/div[3]/div/div[11]/div[1]/a/div"
+      #  ))).click()
+
+def etickt_clikc(driver):
+    #나머지 클릭 나머지 9개
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH,
                                         "/html/body/div[1]/div[4]/div[1]/div/div/div[3]/div/div[11]/div[2]/a/div"))).click()
@@ -185,3 +224,13 @@ def eticket(driver):
     WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH,
                                         "/html/body/div[1]/div[4]/div[1]/div/div/div[3]/div/div[11]/div[10]/a/div"))).click()
+
+
+def logout(driver):
+    WebDriverWait(driver, 1000000).until(EC.presence_of_element_located((By.XPATH,
+        "//*[@id='navbar']/div/a[1]"
+         ))).click()
+def download(url , file_name):
+    with open(file_name, "wb")as file:
+        response = get(url)
+        file.write(response.content)

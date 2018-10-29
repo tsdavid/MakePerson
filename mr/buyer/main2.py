@@ -69,6 +69,6 @@ if __name__ == "__main__":
 
         fc.logout(driver)
 
-    fc.PrintExcel2(quantity_list, UserList, ResultCal[2], BuyTimeList)
+    fc.PrintExcel(quantity_list, UserList, ResultCal[2], BuyTimeList)
 
     # 구매횟수를 quantitly_list으로 했으니까 이제 티켓을 클릭하는 것도 그렇게 하면됨

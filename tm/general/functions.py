@@ -27,8 +27,7 @@ def login(driver , USERID , PASSWORD):
 
 
 def logout(driver):
-    print("logout function")
-
+    driver.find_element_by_xpath("//*[@id='header2']/div/div[1]/div[1]/ul/li[2]/a").click()
 def reservation(driver , quantity):
     #성인권 클릭
     driver.find_element_by_xpath(
@@ -50,6 +49,19 @@ def reservation(driver , quantity):
 
 
 def order(driver , Name , FIrName , Email , PayBank):
+    #사용자정보 변경
+    time.sleep(6)
+    driver.find_element_by_xpath(
+             "//*[@id='_buyer']/div/table/thead/tr/td/label[2]/em"
+     ).click()
+    driver.find_element_by_xpath(
+        "//*[@id='_buyer_others_name']"
+    ).send_keys(FIrName+Name) #풀네임
+    driver.find_element_by_xpath("//*[@id='_buyer_others_phone1']").send_keys("7251") #전화번호 앞자리
+    driver.find_element_by_xpath("//*[@id='_buyer_others_phone2']").send_keys("8121") #전화번호 뒷자리
+    driver.find_element_by_xpath("//*[@id='_buyer_others_email']").send_keys(Email)
+
+
     #여권영문 이름
     WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,
         "//*[@id='_custom_fields']/div/div/table/tbody/tr[1]/td/input"
@@ -96,3 +108,7 @@ def Payment(driver):
     WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.XPATH,
        "/html/body/div/ul/li[2]/a"
        ))).click()
+def wait(driver):
+    WebDriverWait(driver, 100000000000).until(EC.presence_of_element_located((By.XPATH,
+       "//*[@id='_header']/div/h3"
+       )))

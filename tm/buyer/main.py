@@ -1,11 +1,11 @@
 #-*- coding: utf-8 -*-
 import random
 import sys
-sys.path.insert(0, '/Users/owner/PycharmProjects/MakePerson/tm/general/')
-import functions  as fc
-#import accounts as ac
-#import codes as cd
-
+sys.path.insert(0, '/Users/user/PycharmProjects/MakePerson/tm/general/')
+import functions as fc
+import accounts as ac
+import codes as cd
+import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,8 +17,6 @@ import numpy as np
 
 
 
-ID = "jak2727"
-PASSW = "tongsung8116!"
 
 LoginUrl = "https://login.ticketmonster.co.kr/user/loginform?return_url="
 ItemUrl = [
@@ -27,11 +25,21 @@ ItemUrl = [
 ]
 
 
-driver = webdriver.Chrome('/Users/owner/PycharmProjects/MakePerson/tm/buyer/chromedriver')
-driver.get(LoginUrl)
-fc.login(driver , ID , PASSW)
+driver = webdriver.Chrome('/Users/user/PycharmProjects/MakePerson/tm/buyer/chromedriver')
+timeStap = []
+for Num in range(12,16,1):
+    driver.get(cd.company_code['login_url'])
+    fc.login(driver , ac.tm_acoountsID[Num] , ac.tm_acoountsPAW[Num])
 
 
-#첫번쨰 싱가포르 유니버셜
-driver.get(ItemUrl[0])
-fc.reservation(driver , 9)
+
+    #첫번쨰 싱가포르 유니버셜
+    driver.get(ItemUrl[0])
+    fc.reservation(driver , 9)
+    fc.order(driver , ac.tm_acoountsLname[Num] , ac.tm_acoountsFname[Num] , "davidkim@kimnkims.com" , str(5))
+    fc.wait(driver)
+    time = datetime.datetime.now()
+    timeStap.append(time)
+    fc.logout(driver)
+
+print(timeStap)

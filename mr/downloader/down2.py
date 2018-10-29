@@ -12,7 +12,7 @@ import os
 import PyPDF2
 import sys
 sys.path.insert(0, '/Users/user/PycharmProjects/MakePerson/mr/general/')
-#import functions  as fc
+import functions  as fc
 import accounts as ac
 #import codes as cd
 
@@ -48,7 +48,7 @@ def ticket(driver):
          "/html/body/main/div/div[4]/div[2]/div[2]/div/a"))).click()
 
 
-downlist = ac.MrKimnKimsAcc[46:]
+downlist = ac.MrKimnKimsAcc[2:27]
 driver = webdriver.Chrome('/Users/user/PycharmProjects/MakePerson/mr/downloader/chromedriver')
 for i in range(len(downlist)):
     #driver = webdriver.Chrome('/Users/user/PycharmProjects/buyer/chromedriver')
@@ -62,7 +62,7 @@ for i in range(len(downlist)):
 
     driver.get("https://www.myrealtrip.com/traveler/reservations/ongoing")
 
-    ticket(driver)
+    fc.ticket(driver)
 
     time.sleep(6)
 
